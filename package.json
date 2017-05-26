@@ -1,6 +1,6 @@
 {
-  "name": "vux-loader",
-  "version": "1.0.63",
+  "name": "hxvux-loader",
+  "version": "1.0.0",
   "description": "extended loader for vue-loader",
   "main": "src/index.js",
   "keywords": [
@@ -18,10 +18,10 @@
     "framework",
     "frontend"
   ],
-  "author": "airyland <airyland@qq.com>",
+  "author": "lemon <L_Qiao23@163.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/airyland/vux-loader"
+    "url": "https://github.com/huixt/hxvux-loader"
   },
   "license": "MIT",
   "scripts": {

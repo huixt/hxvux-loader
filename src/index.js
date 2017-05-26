@@ -63,7 +63,7 @@ module.exports = function (source) {
   var query = utils.parseQuery(this.query)
   this.cacheable()
   if (!source) return source
-  const config = this.vux || utils.getLoaderConfig(this, 'vux')
+  const config = this.vux || utils.getLoaderConfig(this, 'hxvux')
   if (!config) {
     return source
   }
@@ -283,7 +283,7 @@ module.exports.merge = function (oldConfig, vuxConfig) {
   }
 
   if (hasPlugin('vux-ui', vuxConfig.plugins)) {
-    let mapPath = path.resolve(vuxConfig.options.projectRoot, 'node_modules/vux/src/components/map.json')
+    let mapPath = path.resolve(vuxConfig.options.projectRoot, 'node_modules/hxvux/src/components/map.json')
     if (vuxConfig.options.vuxDev) {
       mapPath = path.resolve(vuxConfig.options.projectRoot, 'src/components/map.json')
     }
@@ -497,7 +497,7 @@ function addStyleLoader(source, STYLE, variables, AFTER_LESS_STYLE) {
  * use babel so component's js can be compiled
  */
 function getBabelLoader(projectRoot, name) {
-  name = name || 'vux'
+  name = name || 'hxvux'
   if (!projectRoot) {
     projectRoot = path.resolve(__dirname, '../../../')
     if (/\.npm/.test(projectRoot)) {
