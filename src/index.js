@@ -30,7 +30,7 @@ const DuplicateStyle = require('../plugins/duplicate-style')
 
 function DonePlugin(callbacks) {
   this.callbacks = callbacks || function () {}
-    // Setup the plugin instance with options...
+  // Setup the plugin instance with options...
 }
 
 DonePlugin.prototype.apply = function (compiler) {
@@ -175,7 +175,7 @@ module.exports.merge = function (oldConfig, vuxConfig) {
   if (oldVuxConfig) {
     // merge old options
     vuxConfig.options = Object.assign(oldVuxConfig.options, vuxConfig.options)
-      // merge old plugins list
+    // merge old plugins list
     vuxConfig.plugins.forEach(function (newPlugin) {
       let isSame = false
       oldVuxConfig.allPlugins.forEach(function (oldPlugin, index) {
@@ -226,14 +226,14 @@ module.exports.merge = function (oldConfig, vuxConfig) {
     if (!config.vue) {
       config.vue = {
         loaders: {
-          i18n: 'vux-loader/src/noop-loader.js'
+          i18n: 'hxvux-loader/src/noop-loader.js'
         }
       }
     } else {
       if (!config.vue.loaders) {
         config.vue.loaders = {}
       }
-      config.vue.loaders.i18n = 'vux-loader/src/noop-loader.js'
+      config.vue.loaders.i18n = 'hxvux-loader/src/noop-loader.js'
     }
   }
 
@@ -326,7 +326,7 @@ module.exports.merge = function (oldConfig, vuxConfig) {
   /**
    * ======== append vux-loader ========
    */
-  let loaderString = vuxConfig.options.loaderString || 'vux-loader!vue-loader'
+  let loaderString = vuxConfig.options.loaderString || 'hxvux-loader!vue-loader'
   const rewriteConfig = vuxConfig.options.rewriteLoaderString
   if (typeof rewriteConfig === 'undefined' || rewriteConfig === true) {
     let hasAppendVuxLoader = false
@@ -337,12 +337,12 @@ module.exports.merge = function (oldConfig, vuxConfig) {
         } else if (isWebpack2 && (rule.options || rule.query)) {
           delete rule.loader
           rule.use = [
-         'vux-loader',
+            'hxvux-loader',
             {
               loader: 'vue-loader',
               options: rule.options,
               query: rule.query
-         }]
+            }]
           delete rule.options
           delete rule.query
         }
